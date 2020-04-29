@@ -1,0 +1,13 @@
+%%%%%% Higgs sector %%%%%%
+
+lterm -lam*(pp*PP-v**2/2)**2   where    lam=(EE/SW*MH/MW)**2/8,  v=2*MW*SW/EE.
+
+let Dpp^mu^a = (deriv^mu + i*gy/2*B1^mu)*pp^a + i*gw/2*taupm^a^b^c*WW1^mu^c*pp^b.
+
+let DPP^mu^a = (deriv^mu - i*gy/2*B1^mu)*PP^a - i*gw/2*taupm^a^b^c*WW2^mu^c*PP^b.
+
+lterm DPP*Dpp.
+
+
+lterm -i*GG*f_SU3*ccghost(G)*G^mu*deriv^mu*ghost(G).
+lterm  -1/2*(deriv*G)**2.

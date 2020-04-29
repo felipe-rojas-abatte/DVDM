@@ -1,0 +1,34 @@
+
+----------------------------------------------------------------
+Incorrect kinetic term for particle N1/n1 :
+(-2)*G(p1)
+----------------------------------------------------------------
+Incorrect kinetic term for particle N3/n3 :
+(-2)*G(p1)
+----------------------------------------------------------------
+Incorrect kinetic term for particle N2/n2 :
+(-2)*G(p1)
+---------------------------------------------------------------
+Mass term for particle Z :
+(+1/CW**2*MW**2) = +91.187600**2
+This particles was declared with mass MZ = 91.187600
+
+---------------------------------------------------------------
+Mass term for particle 'Z.f' :
+(+1/CW**2*MW**2) = +91.187600**2
+This particles was declared with mass MZ = 91.187600
+
+---------------------------------------------------------------
+Mass term for particle '~v+' :
+(-2/EE**2*MW**2*SW**2*lam2+1*Mpar2) = +200.000000**2
+This particles was declared with mass Mvp = 200.000000
+
+---------------------------------------------------------------
+Mass term for particle '~v1' :
+(-2/EE**2*MW**2*SW**2*lam2-2/EE**2*MW**2*SW**2*lam3-2/EE**2*MW**2*SW**2*lam4+1*Mpar2) = +100.000000**2
+This particles was declared with mass Mv1 = 100.000000
+
+---------------------------------------------------------------
+Mass term for particle '~v2' :
+(-2/EE**2*MW**2*SW**2*lam2-2/EE**2*MW**2*SW**2*lam3+2/EE**2*MW**2*SW**2*lam4+1*Mpar2) = +200.000000**2
+This particles was declared with mass Mv2 = 200.000000

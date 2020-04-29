@@ -1,0 +1,33 @@
+SM+VDDM(tFG)
+ Variables 
+ Name   | Value       |>  Comment                                   <|
+alphaSMZ|0.1184       |Srtong alpha(MZ) for running mass calculation
+EE      |0.31343      |elecromagnetic constant
+Q       |100          |QCD scale
+Mm      |0.10566      |muon mass
+Mtau    |1.777        |tau-lepton mass
+Mu      |0.03         |u-quark mass
+Md      |0.05         |d-quark mass
+Ms      |0.2          |s-quark mass
+McMc    |1.23         |Mc(Mc)  MS-BAR
+MbMb    |4.25         |Mb(Mb)  MS-BAR
+Mtop    |172.5        |t-quark pole mass
+MH      |125          |higgs mass
+MZ      |91.1876      |Z-boson mass
+MW      |80.385       |W-boson mass
+wtop    |1.50834      |t-quark width (tree level 1->2x)
+wZ      |2.49444      |Z-boson width        (tree level 1->2x)
+wW      |2.08895      |W-boson width        (tree level 1->2x)
+MZg     |91           |Z-goldstone mass
+MWg     |80           |W-goldstone mass
+s12     |0.221        |Parameter of C-K-M matrix (PDG-94)
+s23     |0.04         |Parameter of C-K-M matrix (PDG-94)
+s13     |0.0035       |Parameter of C-K-M matrix (PDG-94)
+alpha2  |1            |alpha2 interaccion
+alpha3  |1            |alpha3 interaccion
+Maux    |1            |Auxiliar mass
+lamL    |1            |lamda interaction between DM and Higgs
+Mv1     |100          |DM ~v1 mass CP even
+Mv2     |200          |Neutral ~v2 mass CP odd
+Mvp     |200          |Charged ~vc mass
+wv1     |0            |width of ~V1 boson

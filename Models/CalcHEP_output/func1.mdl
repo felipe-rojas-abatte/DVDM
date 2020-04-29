@@ -1,0 +1,45 @@
+SM+VDDM(tFG)
+ Constraints 
+ Name  |> Expression                                                                                                                                                                                           <|
+pi     |acos(-1)
+GG     |sqrt(4*pi*alphaQCD(Q))
+Mcp    |McMc*(1+4/3*alphaQCD(McMc)/pi) % 1 loop formula like in Hdecay
+Mbp    |MbMb*(1+4/3*alphaQCD(MbMb)/pi) % 1 loop formula like in Hdecay
+alphaE0|1/137.036 % electromagnetic constant at zero energy
+CW     |MW/MZ % on-shell cos of the Weinberg angle
+SW     |sqrt(1-CW^2) % sin of the Weinberg angle
+GF     |EE^2/(2*SW*MW)^2/Sqrt2 % Fermi COnstant
+vv     |2*MW/EE*SW
+c12    |sqrt(1-s12^2) % parameter  of C-K-M matrix
+c23    |sqrt(1-s23^2) % parameter  of C-K-M matrix
+c13    |sqrt(1-s13^2) % parameter  of C-K-M matrix
+LamQCD |initQCD5(alphaSMZ, McMc, MbMb, Mtop)
+Mb     |MbEff(Q)
+Mt     |MtEff(Q)
+Mc     |McEff(Q)
+lam2   |lamL+2/vv^2*(Mv1^2-Mvp^2) % cuartic coupling constant
+lam3   |1/vv^2*(2*Mvp^2-Mv1^2-Mv2^2) % cuartic coupling constant
+lam4   |1/vv^2*(Mv2^2-Mv1^2) % cuartic coupling constant
+Mpar2  |Mv1^2+vv^2*lamL/2 % Mass squared parameter
+aQCD   |alphaQCD(MH)/pi
+ahF_c  |(-EE)/MW*Mc/SW/2/Mc
+ahF_b  |(-EE)/MW*Mb/SW/2/Mb
+ahF_t  |(-EE)/MW*Mtop/SW/2/Mtop
+ahF_e3 |(-EE)/MW*Mtau/SW/2/Mtau
+a_hV_W |EE*MW/SW/MW^2
+a_hV_V |-2/EE*MW*SW*lam2/Mvp^2
+aQCD_h |alphaQCD(MH)/pi
+Rqcd_h |sqrt(1+aQCD_h*(149/12+aQCD_h*(68.6482-aQCD_h*212.447)))
+Quq    |(2/3)^2
+Qdq    |(1/3)^2
+LGGH   |-cabs(hGGeven(MH, aQCD_h, 3, 1, 3, Mbp, ahF_b, 1, 3, Mcp, ahF_c, 1, 3, Mtop, ahF_t))
+LAAH   |-cabs(Qdq*hAAeven(MH, aQCD_h, 1, 1, 3, Mbp, ahF_b)+Quq*hAAeven(MH, aQCD_h, 2, 1, 3, Mtop, ahF_t, 1, 3, Mcp, ahF_c)+hAAeven(MH, aQCD_h, 3, 1, 1, Mtau, ahF_e3, 2, 1, MW, a_hV_W, 2, 1, Mvp, a_hV_V))
+B00000 |1+2*CW^2
+B00001 |1-4*CW^2
+B00002 |EE^2*vv-8*LGGH*MW^2*Rqcd_h*SW^2
+B00003 |lam2+lam3+lam4
+B00004 |lam2+lam3-lam4
+B00005 |lam3+lam4
+B00006 |lam3-lam4
+B00007 |lam2+lam3
+B00008 |alpha2+alpha3

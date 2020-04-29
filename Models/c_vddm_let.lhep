@@ -1,0 +1,33 @@
+%%%% Flavor eigenstates in function of mass eigenstates %%%%%
+
+let B1 = -SW*Z+CW*A.
+let W3 = CW*Z+SW*A.
+let W1 = ('W+'+'W-')/Sqrt2, W2 = i*('W+'-'W-')/Sqrt2.
+
+do_if gauge_fixing==Feynman.
+
+let gh1 = ('W+.c'+'W-.c')/Sqrt2.
+let gh2 = i*('W+.c'-'W-.c')/Sqrt2, gh3 = CW*'Z.c'+SW*'A.c'.
+let gh = {gh1,gh2,gh3}.
+
+let Gh1 = ('W+.C'+'W-.C')/Sqrt2.
+let Gh2 = i*('W+.C'-'W-.C')/Sqrt2, Gh3= CW*'Z.C'+SW*'A.C'.
+let Gh = {Gh1,Gh2,Gh3}. 
+
+end_if.
+
+let WW = {W1, W2 , W3}, WW1 = {'W+',W3,'W-'}, WW2 = {'W-',W3,'W+'}.
+
+%%%%%%% Definition of the higgs doublet %%%%%%
+
+do_if gauge_fixing==Feynman.
+
+let pp = { -i*'W+.f',  (vev(2*MW/EE*SW)+H+i*'Z.f')/Sqrt2 }, 
+    PP = {  i*'W-.f',  (vev(2*MW/EE*SW)+H-i*'Z.f')/Sqrt2 }.
+
+do_else.
+
+let pp = { 0,  (vev(2*MW/EE*SW)+H)/Sqrt2 }, 
+    PP = { 0,  (vev(2*MW/EE*SW)+H)/Sqrt2 }.
+    
+end_if.

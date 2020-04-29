@@ -1,0 +1,32 @@
+%%%%%%% Yukawa interactions for quarks %%%%%%%
+
+
+lterm  -M/MW/Sqrt2*gw*(anti(pl)*(1+g5)/2*pp*pr + anti(pr)*(1-g5)/2*pl*PP )
+    where
+	M=Vud*Md,  pl=q1a, pr=d;          % 0 stands Md for 
+	M=Vus*Ms, pl=q1a, pr=s;
+	M=Vub*Mb, pl=q1a, pr=b;
+	M=Vcd*Md,  pl=q2a, pr=d;
+	M=Vcs*Ms, pl=q2a, pr=s;
+	M=Vcb*Mb, pl=q2a, pr=b;
+	M=Vtd*Md,  pl=q3a, pr=d;
+	M=Vts*Ms, pl=q3a, pr=s;
+	M=Vtb*Mb, pl=q3a, pr=b.
+
+
+lterm  -M/MW/Sqrt2*gw*(anti(pl)*(1+g5)/2*i*tau2*pr*PP + anti(pr)*(1-g5)/2*i*pl*tau2*pp ) 
+ where
+	M=Mu ,  pl=q1a, pr=u;
+	M=Mc,  pl=q2a, pr=c;
+	M=Mtop,pl=q3a, pr=t.
+
+
+%%%%%%% Yukawa interactions for leptons %%%%%%%
+
+lterm  -M/MW/Sqrt2*gw*(anti(pl)*(1+g5)/2*pp*pr + anti(pr)*(1-g5)/2*pl*PP)
+    where
+	M=Mm,  pl=l2,  pr=e2;
+	M=Mtau,  pl=l3,  pr=e3.
+	
+
+

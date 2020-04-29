@@ -1,0 +1,25 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%% New Sector %%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%
+let vec = {-i*'~v+', ('~v1' + i*'~v2')/Sqrt2}, VEC = {i*'~v-', ('~v1' - i*'~v2')/Sqrt2}.
+
+lterm -lam2*PP*pp*VEC*vec.
+lterm -lam3*PP*vec*VEC*pp.
+lterm -(lam4/2)*((PP*vec)*(PP*vec) + (VEC*pp)*(VEC*pp)). 
+lterm Mpar2*VEC^mu*vec^mu.
+lterm -alpha2*(VEC^mu*vec^mu)*(VEC^nu*vec^nu). 
+lterm -alpha3*(VEC^mu*vec^nu)*(VEC^nu*vec^mu). 
+
+let DDvec^mu^nu^a = (deriv^mu + i*gy/2*B1^mu)*vec^nu^a + (i*gw/2*taupm^a^b^c*WW1^mu^c)*vec^nu^b.
+let DDVEC^mu^nu^a = (deriv^mu - i*gy/2*B1^mu)*VEC^nu^a - (i*gw/2*taupm^a^b^c*WW2^mu^c)*VEC^nu^b.
+
+%%% kinetic term
+lterm -(1/2)*(DDVEC^mu^nu^a*DDvec^mu^nu^a + DDVEC^nu^mu^a*DDvec^nu^mu^a - DDVEC^mu^nu^a*DDvec^nu^mu^a - DDVEC^nu^mu^a*DDvec^mu^nu^a).
+
+lterm i*betab*VEC^mu^a*(F*delta(2)^a^b)*vec^nu^b
+where   F=deriv^mu*B1^nu-deriv^nu*B1^mu.
+
+lterm i*betaw*(VEC^mu^k)*(F*tau^k^d^a)*(vec^nu^d)   
+where   F=deriv^mu*WW^nu^a-deriv^nu*WW^mu^a - gw*eps^a^b^c*WW^mu^b*WW^nu^c.
+
+

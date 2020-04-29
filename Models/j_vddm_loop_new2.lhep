@@ -1,0 +1,42 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%% HGG+HAA PART %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+external_func(McRun,1).
+external_func(MbRun,1).
+external_func(MtRun,1).
+external_func(HggF,1).
+external_func(HggV,1).
+external_func(HggS,1).
+external_func(Hgam1F,1).
+external_func(alphaQCD,1).
+
+external_func(hGGeven,*).
+external_func(hAAeven,*).
+external_func(hGGodd,*).
+external_func(hAAodd,*).
+external_func(lAAhiggs,*).
+
+parameter	aQCD =alphaQCD(MH)/pi.
+	
+% Amplitudes 
+			  
+_p=[c,b,t,e3] in   parameter ahF__p=CoefVrt([anti(_p),_p,H]) /(mass _p).
+
+parameter aQCD_h =alphaQCD(MH)/pi, Rqcd_h=sqrt(1+ aQCD_h*(149/12+ aQCD_h*(68.6482-aQCD_h*212.447))).
+parameter Quq=(2/3)**2, Qdq=(1/3)**2.
+
+parameter LGGH=-cabs(hGGeven(MH,aQCD_h,3, 
+			1,3,Mbp, ahF_b,
+			1,3,Mcp, ahF_c,
+			1,3,Mtop,ahF_t)).
+   
+let F_G^mu^nu^a=deriv^mu*G^nu^a-deriv^nu*G^mu^a.
+let dF_G^mu^nu^a=i*GG*f_SU3^a^b^c*G^mu^b*G^nu^c.
+
+lterm  1/vv*Rqcd_h*LGGH*pp*PP*F_G*(F_G+2*dF_G).
+
+clear F_G,dF_G.
+
+parameter LmbdAA=-cabs(lAAhiggs(MH,str(H))).
+lterm 1/vv*LmbdAA*(pp*PP-vv**2/2)*F**2
+ 	where
+	F=deriv^mu*A^nu-deriv^nu*A^mu.
