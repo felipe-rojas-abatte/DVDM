@@ -1,3 +1,5 @@
+# Program that generate plots for Relic density, Rescaled Direct Detection and Rescaled Indirect Detection limits as a function of Dark Matter mass considering different values of lambda_L parameter. The program read the information contained on the folder "data" and generate plots for 2 scenarios: quasi-degenerate when Mv2 = Mvp = Mv1 + 1 GeV and non-degenerate when Mv2 = Mvp = Mv1 + 100 GeV
+
 import numpy as np
 import matplotlib
 import matplotlib.pyplot as plt
@@ -8,7 +10,6 @@ import matplotlib.patches as mpatches
 import matplotlib.ticker as ticker
 from matplotlib.ticker import ScalarFormatter
 import os
-
 
 current_dir = os.getcwd()
 this_file = current_dir+'/data/'
@@ -21,11 +22,23 @@ LUX_SIG=interp1d(MDM, SIG, kind='linear')
 (MDM2,SIG2)=np.genfromtxt(this_file+'XENON1T.dat', dtype=float,unpack=True,skip_header=False) 
 XENON_SIG=interp1d(MDM2, SIG2, kind='linear')
 
-#Data with Indirect Detection limits (Fermilat experiment)
+#Data with Indirect Detection limits (HESS experiment)
 (MDM3,SIGV)=np.genfromtxt(this_file+'HESS_Einasto.dat', dtype=float,unpack=True,skip_header=True) 
 HESS_Ei=interp1d(MDM3, SIGV, kind='linear')
 (MDM4,SIGV2)=np.genfromtxt(this_file+'HESS_Einasto2.dat', dtype=float,unpack=True,skip_header=True) 
 HESS_Ei2=interp1d(MDM4, SIGV2, kind='linear')
+
+#Data with Indirect Detection limits (Fermi-Lat experiment)
+(MDM5,SIG5)=np.genfromtxt(this_file+'Fermi-LAT.dat', dtype=float,unpack=True,skip_header=True) 
+Fermi_Ei=interp1d(MDM5, SIG5, kind='linear')
+
+#Data with Indirect Detection limits (PlanckCMB experiment)
+(MDM6,SIG6)=np.genfromtxt(this_file+'PlanckCMB.dat', dtype=float,unpack=True,skip_header=True) 
+PlanckCMB=interp1d(MDM6, SIG6, kind='linear')
+
+#Data with Indirect Detection limits (AMS02 experiment)
+(MDM7,SIG7)=np.genfromtxt(this_file+'AMS02.dat', dtype=float,unpack=True,skip_header=True) 
+AMS02=interp1d(MDM7, SIG7, kind='linear')
 
 #PLANCK measurements
 Mv = np.linspace(10, 2000, 1000)
@@ -38,6 +51,7 @@ omega_LEP = np.linspace(1E-7,1E3,1000)
 omega_LEP_DD = np.linspace(1E-15,1E-3,1000)
 
 Mv_HESS = np.linspace(200, 2000, 1000)
+Mv_rest = np.linspace(80, 2000, 1000)
 #Read data for quasi-degenerate values of Masses
 Mv1a, Mv2a, Mvpa, lamLa, Omegaa, prota, sva, Brv1a, Brv2a, Brvpa, BrhAAa, WHa = np.genfromtxt(this_file+"deg_lamL=5.dat", dtype=float, unpack=True, skip_header=True) 
 Mv1b, Mv2b, Mvpb, lamLb, Omegab, protb, svb, Brv1b, Brv2b, Brvcb, BrhAAb, WHb = np.genfromtxt(this_file+"deg_lamL=1.dat", dtype=float, unpack=True, skip_header=True) 
@@ -93,6 +107,9 @@ N_XENON = XENON
 # Rescaling the Indirect Detection signal
 HESSE1=HESS_Ei(Mv_HESS)
 HESSE2=HESS_Ei2(Mv_HESS)
+Fermi=Fermi_Ei(Mv_HESS)
+Planck=PlanckCMB(Mv_HESS)
+AMS=AMS02(Mv_rest)
 
 sv_a = ((Omegaa/0.112)*sva)
 sv_b = ((Omegab/0.112)*svb)
@@ -117,6 +134,9 @@ sv_r = ((Omegar/0.112)*svr)
 
 N_HESS_Ei1 = HESSE1
 N_HESS_Ei2 = HESSE2
+Fermi1=Fermi
+Planck1=Planck
+AMS1=AMS
 
 ##################################################################################################
 ## LUX limits on rescaled Direct Detection cross section Sigma_SI vs Mh1 for quasi-degenerate case
@@ -441,19 +461,22 @@ legend2c = plt.legend(handles=[NDD1,NDD2,NDD3,NDD4,NDD5,NDD6,NDD7,NDD8,NDD9,NDD1
 plt.gca().add_artist(legend2c)
 plt.savefig('sigma_XENON_nodeg.pdf')
 
-##################################################################################################
-#HESS limits on rescaled Indirect Detection Sigma_V vs Mh1 for quasi-degenerate case
-##################################################################################################
+#####################################################################################
+# ID limits on rescaled Indirect Detection Sigma_V vs Mh1 for quasi-degenerate case #
+#####################################################################################
 fig, ax1 = plt.subplots()
 ax1.fill_between(Mv_HESS, N_HESS_Ei1, 1E-22 ,facecolor='lightgrey', interpolate=True)
 ax1.fill_between(Mv_HESS, N_HESS_Ei2, 1E-22 ,facecolor='darkgrey', interpolate=True)
-ax1.text(0.8, 0.78, '$v_1v_1\\rightarrow W^+W^-$', verticalalignment='top', horizontalalignment='center',  transform=ax1.transAxes, color='k', fontsize=15)
+ax1.fill_between(Mv_rest, Fermi1, 1E-22 ,facecolor='lightgrey', interpolate=True)
+ax1.fill_between(Mv_rest, Planck1, 1E-22 ,facecolor='lightgrey', interpolate=True)
+ax1.fill_between(Mv_rest, AMS1, 1E-22 ,facecolor='lightgrey', interpolate=True)
+#ax1.text(0.8, 0.78, '$v_1v_1\\rightarrow W^+W^-$', verticalalignment='top', horizontalalignment='center',  transform=ax1.transAxes, color='k', fontsize=15)
 
 #Name of axes
 plt.xlabel("Mv$_1$ (GeV)",fontsize=18)
 plt.ylabel("$\\langle\\hat{\\sigma v}\\rangle $ (cm$^3$/s)",fontsize=15.5)
 plt.title("M$_{V_2}$ = M$_{V^{\pm}}$ = M$_{V_1} + 1$ GeV",fontsize=18) 
-plt.xlim(100,2000)
+plt.xlim(80,2000)
 plt.ylim(1E-28,1E-23)
 plt.yscale('log') 
 plt.xscale('log') 
@@ -471,22 +494,20 @@ IDX10, = plt.plot(Mv1hb, sv_hb, label='$\lambda_L=-0.001$',color='g', linestyle=
 
 HESS1, = plt.plot(Mv_HESS, N_HESS_Ei1, label='Einasto',color='grey',linewidth=2)
 HESS2, = plt.plot(Mv_HESS, N_HESS_Ei2, label='Einasto2',color='grey',linewidth=2, linestyle='--')
-
-#plt.plot(Mv_LEP, omega_LEP_DD, linestyle='-', color='r',linewidth=2)
+Fermi, = plt.plot(Mv_rest, Fermi1, label='Fermi-LAT',color='green',linewidth=2, linestyle='-.')
+Planck, = plt.plot(Mv_rest, Planck1, label='Planck CMB',color='purple',linewidth=2, linestyle='-.')
+AMS, = plt.plot(Mv_rest, AMS1, label='AMS-02',color='yellow',linewidth=2, linestyle='-.')
 
 #Creamos la primera leyenda
-legend1b = plt.legend(handles=[IDX1,IDX2,IDX3,IDX4,IDX5,IDX6,IDX7,IDX8,IDX9,IDX10], loc="upper right", ncol=2, handlelength=2.5, borderaxespad=0.1, fancybox=True, shadow=True, fontsize = 8, labelspacing=0.1, handletextpad=0.1) # bbox_to_anchor=(1.5, 1.2))
+legend1b = plt.legend(handles=[IDX1,IDX2,IDX3,IDX4,IDX5,IDX6,IDX7,IDX8,IDX9,IDX10], loc="lower right", ncol=2, handlelength=2.5, borderaxespad=0.1, fancybox=True, shadow=True, fontsize = 8, labelspacing=0.1, handletextpad=0.1) # bbox_to_anchor=(1.5, 1.2))
 
-#legend1b = plt.legend(handles=[IDX4,IDX5,IDX6,IDX7,IDX8,IDX9,IDX10], loc="upper right", ncol=2, handlelength=2.5, borderaxespad=0.1, fancybox=True, shadow=True, fontsize = 8, labelspacing=0.1, handletextpad=0.1) # bbox_to_anchor=(1.5, 1.2))
-
-
-legend2b = plt.legend(handles=[HESS1, HESS2], loc="lower right", ncol=2, handlelength=2.5, borderaxespad=0.1, fancybox=True, shadow=True, fontsize = 8, labelspacing=0.1, handletextpad=0.1)
+legend2b = plt.legend(handles=[HESS1, HESS2, Fermi, Planck, AMS], loc="upper right", ncol=2, handlelength=2.5, borderaxespad=0.1, fancybox=True, shadow=True, fontsize = 8, labelspacing=0.1, handletextpad=0.1)
 
 #Agregamos la primera leyenda
 plt.gca().add_artist(legend1b)
 plt.gca().add_artist(legend2b)
 
-plt.savefig('Omega_HESS_deg.pdf')
+plt.savefig('Omega_ID_deg.pdf')
 
 ###############################################################################################
 ##HESS limits on rescaled Indirect Detection Sigma_SI vs Mh1 for no-degenerate case
@@ -494,13 +515,16 @@ plt.savefig('Omega_HESS_deg.pdf')
 fig, ax1 = plt.subplots()
 ax1.fill_between(Mv_HESS, N_HESS_Ei1, 1E-22 ,facecolor='lightgrey', interpolate=True)
 ax1.fill_between(Mv_HESS, N_HESS_Ei2, 1E-22 ,facecolor='darkgrey', interpolate=True)
-ax1.text(0.8, 0.78, '$v_1v_1\\rightarrow W^+W^-$', verticalalignment='top', horizontalalignment='center',  transform=ax1.transAxes, color='k', fontsize=15)
+ax1.fill_between(Mv_rest, Fermi1, 1E-22 ,facecolor='lightgrey', interpolate=True)
+ax1.fill_between(Mv_rest, Planck1, 1E-22 ,facecolor='lightgrey', interpolate=True)
+ax1.fill_between(Mv_rest, AMS1, 1E-22 ,facecolor='lightgrey', interpolate=True)
+#ax1.text(0.8, 0.78, '$v_1v_1\\rightarrow W^+W^-$', verticalalignment='top', horizontalalignment='center',  transform=ax1.transAxes, color='k', fontsize=15)
 
 #Name of axes
 plt.xlabel("Mv$_1$ (GeV)",fontsize=18)
 plt.ylabel("$\\langle\\hat{\\sigma v}\\rangle$ (cm$^3$/s)",fontsize=15.5)
 plt.title("M$_{V_2}$ = M$_{V^{\pm}}$ = M$_{V_1} + 100$ GeV",fontsize=18) 
-plt.xlim(100,2000)
+plt.xlim(80,2000)
 plt.ylim(1E-28,1E-23)
 plt.yscale('log') 
 plt.xscale('log') 
@@ -518,15 +542,18 @@ NID10, = plt.plot(Mv1r, sv_r, label='$\lambda_L=-0.001$',color='g', linestyle='-
 
 HESS1, = plt.plot(Mv_HESS, N_HESS_Ei1, label='Einasto',color='grey',linewidth=2)
 HESS2, = plt.plot(Mv_HESS, N_HESS_Ei2, label='Einasto2',color='grey',linewidth=2, linestyle='--')
+Fermi, = plt.plot(Mv_rest, Fermi1, label='Fermi-LAT',color='green',linewidth=2, linestyle='-.')
+Planck, = plt.plot(Mv_rest, Planck1, label='Planck CMB',color='purple',linewidth=2, linestyle='-.')
+AMS, = plt.plot(Mv_rest, AMS1, label='AMS-02',color='yellow',linewidth=2, linestyle='-.')
 
 #Creamos la primera leyenda
-legend2c = plt.legend(handles=[NID1,NID2,NID3,NID4,NID5,NID6,NID7,NID8,NID9,NID10], loc="upper right", ncol=2, handlelength=2.5, borderaxespad=0.1, fancybox=True, shadow=True, fontsize = 8, labelspacing=0.1, handletextpad=0.1) # bbox_to_anchor=(1.5, 1.2))
+legend2c = plt.legend(handles=[NID1,NID2,NID3,NID4,NID5,NID6,NID7,NID8,NID9,NID10], loc="lower right", ncol=2, handlelength=2.5, borderaxespad=0.1, fancybox=True, shadow=True, fontsize = 8, labelspacing=0.1, handletextpad=0.1) # bbox_to_anchor=(1.5, 1.2))
 
-legend3c = plt.legend(handles=[HESS1, HESS2], loc="lower right", ncol=2, handlelength=2.5, borderaxespad=0.1, fancybox=True, shadow=True, fontsize = 8, labelspacing=0.1, handletextpad=0.1) # bbox_to_anchor=(1.5, 1.2))
+legend3c = plt.legend(handles=[HESS1, HESS2, Fermi, Planck, AMS], loc="upper right", ncol=2, handlelength=2.5, borderaxespad=0.1, fancybox=True, shadow=True, fontsize = 8, labelspacing=0.1, handletextpad=0.1) # bbox_to_anchor=(1.5, 1.2))
 
 #Agregamos la primera leyenda
 plt.gca().add_artist(legend2c)
 plt.gca().add_artist(legend3c)
-plt.savefig('Omega_HESS_nodeg.pdf')
+plt.savefig('Omega_ID_nodeg.pdf')
 
 plt.clf()
