@@ -4,8 +4,7 @@ This repository holds all the information that served for the construction of th
 
 ## Paper published ##
 
-This project led to the publication of the article called "Dark matter from a vector field in the fundamental representation of SU(2)_L", which was published in: 	Phys. Rev. D 99, 075026 (2019)
-DOI: <10.1103/PhysRevD.99.075026>
+This project led to the publication of the article called "[Dark matter from a vector field in the fundamental representation of SU(2)_L](https://journals.aps.org/prd/abstract/10.1103/PhysRevD.99.075026)", which was published in: Phys. Rev. D 99, 075026 (2019)
 
 ## Repository Structure ##
 
@@ -13,4 +12,4 @@ The repository folder structure is organized in the following way:
   * [Draft] (LaTeX code for the article)  
   * [Model] (LanHEP/CalcHEP code for the model)
   * [Research] (Results of the analysis)
-  * [PhysRevD.96.095025] (Article)
+  * [PhysRevD.99.075026] (Article)
