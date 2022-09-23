@@ -9,7 +9,7 @@ This project led to the publication of the article called "[Dark matter from a v
 ## Repository Structure ##
 
 The repository folder structure is organized in the following way:
-  * [Draft] (LaTeX code for the article)  
-  * [Model] (LanHEP/CalcHEP code for the model)
-  * [Research] (Results of the analysis)
-  * [PhysRevD.99.075026] (Article)
+  * Draft: (LaTeX code for the article)  
+  * Model: (LanHEP/CalcHEP code for the model)
+  * Research: (Results of the analysis)
+  * [PhysRevD.99.075026](https://journals.aps.org/prd/abstract/10.1103/PhysRevD.99.075026) (Article)
