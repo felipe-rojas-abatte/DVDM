@@ -1,0 +1,1219 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     54459,       1211]
+NotebookOptionsPosition[     52158,       1134]
+NotebookOutlinePosition[     52528,       1150]
+CellTagsIndexPosition[     52485,       1147]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[OutputFormData["\<\
+Get[\"FeynCalc`\"]\
+\>", "\<\
+<< FeynCalc`\
+\>"], "Input",
+ CellChangeTimes->{{3.689954067529076*^9, 3.689954088338504*^9}, 
+   3.697978244872656*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ FormBox[
+  InterpretationBox[
+   RowBox[{
+    StyleBox["\<\"FeynCalc \"\>", "Text",
+     StripOnInput->False,
+     FontWeight->Bold], "\[InvisibleSpace]", 
+    StyleBox["\<\"9.2.0. For help, use the \"\>", "Text",
+     StripOnInput->False], "\[InvisibleSpace]", 
+    StyleBox[
+     TagBox[
+      ButtonBox[
+       RowBox[{"documentation", " ", "center"}],
+       BaseStyle->"Link",
+       ButtonData:>"paclet:FeynCalc/",
+       ButtonNote->"paclet:FeynCalc/"],
+      DisplayForm], "Text",
+     StripOnInput->False], "\[InvisibleSpace]", 
+    StyleBox["\<\", check out the \"\>", "Text",
+     StripOnInput->False], "\[InvisibleSpace]", 
+    StyleBox[
+     TagBox[
+      ButtonBox["wiki",
+       BaseStyle->"Hyperlink",
+       ButtonData:>{
+         URL["https://github.com/FeynCalc/feyncalc/wiki"], None},
+       ButtonNote->"https://github.com/FeynCalc/feyncalc/wiki"],
+      DisplayForm], "Text",
+     StripOnInput->False], "\[InvisibleSpace]", 
+    StyleBox["\<\" or write to the \"\>", "Text",
+     StripOnInput->False], "\[InvisibleSpace]", 
+    StyleBox[
+     TagBox[
+      ButtonBox[
+       RowBox[{"mailing", " ", 
+        RowBox[{"list", "."}]}],
+       BaseStyle->"Hyperlink",
+       ButtonData:>{
+         URL["http://www.feyncalc.org/forum/"], None},
+       ButtonNote->"http://www.feyncalc.org/forum/"],
+      DisplayForm], "Text",
+     StripOnInput->False]}],
+   SequenceForm[
+    Style["FeynCalc ", "Text", Bold], 
+    Style["9.2.0. For help, use the ", "Text"], 
+    Style[
+     DisplayForm[
+      ButtonBox[
+      "documentation center", BaseStyle -> "Link", ButtonData :> 
+       "paclet:FeynCalc/", ButtonNote -> "paclet:FeynCalc/"]], "Text"], 
+    Style[", check out the ", "Text"], 
+    Style[
+     DisplayForm[
+      ButtonBox["wiki", ButtonData :> {
+         URL["https://github.com/FeynCalc/feyncalc/wiki"], None}, BaseStyle -> 
+       "Hyperlink", ButtonNote -> 
+       "https://github.com/FeynCalc/feyncalc/wiki"]], "Text"], 
+    Style[" or write to the ", "Text"], 
+    Style[
+     DisplayForm[
+      ButtonBox["mailing list.", ButtonData :> {
+         URL["http://www.feyncalc.org/forum/"], None}, BaseStyle -> 
+       "Hyperlink", ButtonNote -> "http://www.feyncalc.org/forum/"]], "Text"]],
+   Editable->False], TraditionalForm]], "Print",
+ CellChangeTimes->{
+  3.68995409033711*^9, 3.689955516458209*^9, 3.689960349928672*^9, 
+   3.689977307131508*^9, 3.6900202554605913`*^9, 3.690020407633512*^9, 
+   3.690021957493189*^9, 3.6900222624077187`*^9, 3.690022582233363*^9, 
+   3.69003228437812*^9, 3.690033064543354*^9, 3.697974469258614*^9, {
+   3.697978230665015*^9, 3.6979782449391603`*^9}, 3.697978646074895*^9, 
+   3.6979812913773127`*^9, 3.698068003921836*^9, 3.69807121879633*^9, 
+   3.698071427941299*^9, 3.698072336872921*^9, 3.698072440358272*^9, 
+   3.698078841602072*^9, 3.698078902716494*^9, 3.698080042007744*^9, 
+   3.69808046819628*^9, 3.6980810606468077`*^9, 3.698081427768179*^9, 
+   3.698143874847273*^9, 3.698143941550105*^9, 3.6981439881753807`*^9, 
+   3.6981525820311613`*^9, 3.6981552902560167`*^9, 3.698155587790949*^9, 
+   3.69815711142832*^9, 3.698167310154553*^9, 3.698231775930175*^9, 
+   3.698399922376615*^9, 3.698403385960928*^9, 3.6984034854364443`*^9, 
+   3.698403882762567*^9, 3.69840413123007*^9, 3.698410503596821*^9, 
+   3.698414319004209*^9, 3.6984181242111063`*^9, 3.698418265864184*^9, 
+   3.698424495877886*^9, 3.698425162526739*^9, 3.6984254936035223`*^9, 
+   3.703976343956626*^9, 3.703977166498804*^9, 3.704018495774173*^9, 
+   3.704020703664551*^9, 3.704449482060356*^9, 3.704457197912451*^9, 
+   3.7045414123342047`*^9, 3.7046457684717903`*^9, {3.704646200581656*^9, 
+   3.704646217473737*^9}, {3.704646605680932*^9, 3.7046466275999107`*^9}, 
+   3.704710906986124*^9, 3.7047115288864813`*^9, 3.704721715532987*^9, 
+   3.704722138742302*^9, 3.7047336483093443`*^9, 3.704734602165621*^9, 
+   3.704737704218792*^9, 3.705071101158313*^9, 3.7050723700039873`*^9, 
+   3.7050731708374443`*^9, 3.7050732598997593`*^9, 3.705074414323429*^9, 
+   3.7050744549841633`*^9, 3.7051445408153877`*^9, 3.705238252217175*^9, 
+   3.705244185027052*^9, 3.7052443050507317`*^9, 3.70524442193852*^9, 
+   3.705252877871912*^9, 3.707058084714343*^9, 3.7070582856478*^9, 
+   3.707059454197054*^9, 3.707061684167968*^9, 3.707065680896147*^9, {
+   3.707065735106286*^9, 3.707065762314268*^9}, 3.7080881977278833`*^9, {
+   3.708088376162765*^9, 3.708088405397532*^9}, 3.708088453046461*^9, 
+   3.708089286458541*^9, 3.708089676958631*^9, 3.7148864141536007`*^9, 
+   3.7148867481030607`*^9}],
+
+Cell[BoxData[
+ FormBox[
+  InterpretationBox[
+   RowBox[{
+    StyleBox["\<\"See also the supplied \"\>", "Text",
+     StripOnInput->False], "\[InvisibleSpace]", 
+    StyleBox[
+     TagBox[
+      ButtonBox[
+       RowBox[{"examples", "."}],
+       BaseStyle->"Hyperlink",
+       ButtonFunction:>SystemOpen[
+         FileNameJoin[{FeynCalc`$FeynCalcDirectory, "Examples"}]],
+       Evaluator->Automatic,
+       Method->"Preemptive"],
+      DisplayForm], "Text",
+     StripOnInput->False], "\[InvisibleSpace]", 
+    StyleBox["\<\" If you use FeynCalc in your research, please cite\"\>", 
+     "Text",
+     StripOnInput->False]}],
+   SequenceForm[
+    Style["See also the supplied ", "Text"], 
+    Style[
+     DisplayForm[
+      ButtonBox[
+      "examples.", BaseStyle -> "Hyperlink", ButtonFunction :> SystemOpen[
+         FileNameJoin[{FeynCalc`$FeynCalcDirectory, "Examples"}]], Evaluator -> 
+       Automatic, Method -> "Preemptive"]], "Text"], 
+    Style[" If you use FeynCalc in your research, please cite", "Text"]],
+   Editable->False], TraditionalForm]], "Print",
+ CellChangeTimes->{
+  3.68995409033711*^9, 3.689955516458209*^9, 3.689960349928672*^9, 
+   3.689977307131508*^9, 3.6900202554605913`*^9, 3.690020407633512*^9, 
+   3.690021957493189*^9, 3.6900222624077187`*^9, 3.690022582233363*^9, 
+   3.69003228437812*^9, 3.690033064543354*^9, 3.697974469258614*^9, {
+   3.697978230665015*^9, 3.6979782449391603`*^9}, 3.697978646074895*^9, 
+   3.6979812913773127`*^9, 3.698068003921836*^9, 3.69807121879633*^9, 
+   3.698071427941299*^9, 3.698072336872921*^9, 3.698072440358272*^9, 
+   3.698078841602072*^9, 3.698078902716494*^9, 3.698080042007744*^9, 
+   3.69808046819628*^9, 3.6980810606468077`*^9, 3.698081427768179*^9, 
+   3.698143874847273*^9, 3.698143941550105*^9, 3.6981439881753807`*^9, 
+   3.6981525820311613`*^9, 3.6981552902560167`*^9, 3.698155587790949*^9, 
+   3.69815711142832*^9, 3.698167310154553*^9, 3.698231775930175*^9, 
+   3.698399922376615*^9, 3.698403385960928*^9, 3.6984034854364443`*^9, 
+   3.698403882762567*^9, 3.69840413123007*^9, 3.698410503596821*^9, 
+   3.698414319004209*^9, 3.6984181242111063`*^9, 3.698418265864184*^9, 
+   3.698424495877886*^9, 3.698425162526739*^9, 3.6984254936035223`*^9, 
+   3.703976343956626*^9, 3.703977166498804*^9, 3.704018495774173*^9, 
+   3.704020703664551*^9, 3.704449482060356*^9, 3.704457197912451*^9, 
+   3.7045414123342047`*^9, 3.7046457684717903`*^9, {3.704646200581656*^9, 
+   3.704646217473737*^9}, {3.704646605680932*^9, 3.7046466275999107`*^9}, 
+   3.704710906986124*^9, 3.7047115288864813`*^9, 3.704721715532987*^9, 
+   3.704722138742302*^9, 3.7047336483093443`*^9, 3.704734602165621*^9, 
+   3.704737704218792*^9, 3.705071101158313*^9, 3.7050723700039873`*^9, 
+   3.7050731708374443`*^9, 3.7050732598997593`*^9, 3.705074414323429*^9, 
+   3.7050744549841633`*^9, 3.7051445408153877`*^9, 3.705238252217175*^9, 
+   3.705244185027052*^9, 3.7052443050507317`*^9, 3.70524442193852*^9, 
+   3.705252877871912*^9, 3.707058084714343*^9, 3.7070582856478*^9, 
+   3.707059454197054*^9, 3.707061684167968*^9, 3.707065680896147*^9, {
+   3.707065735106286*^9, 3.707065762314268*^9}, 3.7080881977278833`*^9, {
+   3.708088376162765*^9, 3.708088405397532*^9}, 3.708088453046461*^9, 
+   3.708089286458541*^9, 3.708089676958631*^9, 3.7148864141536007`*^9, 
+   3.714886748104869*^9}],
+
+Cell[BoxData[
+ FormBox[
+  StyleBox["\<\" \[Bullet] V. Shtabovenko, R. Mertig and F. Orellana, Comput. \
+Phys. Commun., 207C, 432-444, 2016, arXiv:1601.01167\"\>", "Text",
+   StripOnInput->False], TraditionalForm]], "Print",
+ CellChangeTimes->{
+  3.68995409033711*^9, 3.689955516458209*^9, 3.689960349928672*^9, 
+   3.689977307131508*^9, 3.6900202554605913`*^9, 3.690020407633512*^9, 
+   3.690021957493189*^9, 3.6900222624077187`*^9, 3.690022582233363*^9, 
+   3.69003228437812*^9, 3.690033064543354*^9, 3.697974469258614*^9, {
+   3.697978230665015*^9, 3.6979782449391603`*^9}, 3.697978646074895*^9, 
+   3.6979812913773127`*^9, 3.698068003921836*^9, 3.69807121879633*^9, 
+   3.698071427941299*^9, 3.698072336872921*^9, 3.698072440358272*^9, 
+   3.698078841602072*^9, 3.698078902716494*^9, 3.698080042007744*^9, 
+   3.69808046819628*^9, 3.6980810606468077`*^9, 3.698081427768179*^9, 
+   3.698143874847273*^9, 3.698143941550105*^9, 3.6981439881753807`*^9, 
+   3.6981525820311613`*^9, 3.6981552902560167`*^9, 3.698155587790949*^9, 
+   3.69815711142832*^9, 3.698167310154553*^9, 3.698231775930175*^9, 
+   3.698399922376615*^9, 3.698403385960928*^9, 3.6984034854364443`*^9, 
+   3.698403882762567*^9, 3.69840413123007*^9, 3.698410503596821*^9, 
+   3.698414319004209*^9, 3.6984181242111063`*^9, 3.698418265864184*^9, 
+   3.698424495877886*^9, 3.698425162526739*^9, 3.6984254936035223`*^9, 
+   3.703976343956626*^9, 3.703977166498804*^9, 3.704018495774173*^9, 
+   3.704020703664551*^9, 3.704449482060356*^9, 3.704457197912451*^9, 
+   3.7045414123342047`*^9, 3.7046457684717903`*^9, {3.704646200581656*^9, 
+   3.704646217473737*^9}, {3.704646605680932*^9, 3.7046466275999107`*^9}, 
+   3.704710906986124*^9, 3.7047115288864813`*^9, 3.704721715532987*^9, 
+   3.704722138742302*^9, 3.7047336483093443`*^9, 3.704734602165621*^9, 
+   3.704737704218792*^9, 3.705071101158313*^9, 3.7050723700039873`*^9, 
+   3.7050731708374443`*^9, 3.7050732598997593`*^9, 3.705074414323429*^9, 
+   3.7050744549841633`*^9, 3.7051445408153877`*^9, 3.705238252217175*^9, 
+   3.705244185027052*^9, 3.7052443050507317`*^9, 3.70524442193852*^9, 
+   3.705252877871912*^9, 3.707058084714343*^9, 3.7070582856478*^9, 
+   3.707059454197054*^9, 3.707061684167968*^9, 3.707065680896147*^9, {
+   3.707065735106286*^9, 3.707065762314268*^9}, 3.7080881977278833`*^9, {
+   3.708088376162765*^9, 3.708088405397532*^9}, 3.708088453046461*^9, 
+   3.708089286458541*^9, 3.708089676958631*^9, 3.7148864141536007`*^9, 
+   3.714886748105796*^9}],
+
+Cell[BoxData[
+ FormBox[
+  StyleBox["\<\" \[Bullet] R. Mertig, M. B\[ODoubleDot]hm, and A. Denner, \
+Comput. Phys. Commun., 64, 345-359, 1991.\"\>", "Text",
+   StripOnInput->False], TraditionalForm]], "Print",
+ CellChangeTimes->{
+  3.68995409033711*^9, 3.689955516458209*^9, 3.689960349928672*^9, 
+   3.689977307131508*^9, 3.6900202554605913`*^9, 3.690020407633512*^9, 
+   3.690021957493189*^9, 3.6900222624077187`*^9, 3.690022582233363*^9, 
+   3.69003228437812*^9, 3.690033064543354*^9, 3.697974469258614*^9, {
+   3.697978230665015*^9, 3.6979782449391603`*^9}, 3.697978646074895*^9, 
+   3.6979812913773127`*^9, 3.698068003921836*^9, 3.69807121879633*^9, 
+   3.698071427941299*^9, 3.698072336872921*^9, 3.698072440358272*^9, 
+   3.698078841602072*^9, 3.698078902716494*^9, 3.698080042007744*^9, 
+   3.69808046819628*^9, 3.6980810606468077`*^9, 3.698081427768179*^9, 
+   3.698143874847273*^9, 3.698143941550105*^9, 3.6981439881753807`*^9, 
+   3.6981525820311613`*^9, 3.6981552902560167`*^9, 3.698155587790949*^9, 
+   3.69815711142832*^9, 3.698167310154553*^9, 3.698231775930175*^9, 
+   3.698399922376615*^9, 3.698403385960928*^9, 3.6984034854364443`*^9, 
+   3.698403882762567*^9, 3.69840413123007*^9, 3.698410503596821*^9, 
+   3.698414319004209*^9, 3.6984181242111063`*^9, 3.698418265864184*^9, 
+   3.698424495877886*^9, 3.698425162526739*^9, 3.6984254936035223`*^9, 
+   3.703976343956626*^9, 3.703977166498804*^9, 3.704018495774173*^9, 
+   3.704020703664551*^9, 3.704449482060356*^9, 3.704457197912451*^9, 
+   3.7045414123342047`*^9, 3.7046457684717903`*^9, {3.704646200581656*^9, 
+   3.704646217473737*^9}, {3.704646605680932*^9, 3.7046466275999107`*^9}, 
+   3.704710906986124*^9, 3.7047115288864813`*^9, 3.704721715532987*^9, 
+   3.704722138742302*^9, 3.7047336483093443`*^9, 3.704734602165621*^9, 
+   3.704737704218792*^9, 3.705071101158313*^9, 3.7050723700039873`*^9, 
+   3.7050731708374443`*^9, 3.7050732598997593`*^9, 3.705074414323429*^9, 
+   3.7050744549841633`*^9, 3.7051445408153877`*^9, 3.705238252217175*^9, 
+   3.705244185027052*^9, 3.7052443050507317`*^9, 3.70524442193852*^9, 
+   3.705252877871912*^9, 3.707058084714343*^9, 3.7070582856478*^9, 
+   3.707059454197054*^9, 3.707061684167968*^9, 3.707065680896147*^9, {
+   3.707065735106286*^9, 3.707065762314268*^9}, 3.7080881977278833`*^9, {
+   3.708088376162765*^9, 3.708088405397532*^9}, 3.708088453046461*^9, 
+   3.708089286458541*^9, 3.708089676958631*^9, 3.7148864141536007`*^9, 
+   3.714886748106477*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Install", "[", "\"\<LoopTools\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.698425068176298*^9, 3.698425082452791*^9}, {
+  3.704449445311285*^9, 3.7044494723910103`*^9}, {3.704646615656187*^9, 
+  3.704646622358631*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  TemplateBox[{
+   "PaVe","shdw",
+    "\"Symbol \\!\\(\\*FormBox[\\\"\\\\\\\"PaVe\\\\\\\"\\\", TraditionalForm]\
+\\) appears in multiple contexts \\!\\(\\*FormBox[RowBox[{\\\"{\\\", RowBox[{\
+\\\"\\\\\\\"LoopTools`\\\\\\\"\\\", \\\",\\\", \
+\\\"\\\\\\\"FeynCalc`\\\\\\\"\\\"}], \\\"}\\\"}], TraditionalForm]\\); \
+definitions in context \\!\\(\\*FormBox[\\\"\\\\\\\"LoopTools`\\\\\\\"\\\", \
+TraditionalForm]\\) may shadow or be shadowed by other definitions.\"",2,2,1,
+    22972650892718184985,"Local"},
+   "MessageTemplate"], TraditionalForm]], "Message", "MSG",
+ CellChangeTimes->{3.708088405589629*^9, 3.7080884532285423`*^9, 
+  3.7080892866402483`*^9, 3.708089677246046*^9, 3.714886414357644*^9, 
+  3.7148867482686567`*^9}],
+
+Cell[BoxData[
+ FormBox[
+  TemplateBox[{
+   "Li2","shdw",
+    "\"Symbol \\!\\(\\*FormBox[\\\"\\\\\\\"Li2\\\\\\\"\\\", \
+TraditionalForm]\\) appears in multiple contexts \
+\\!\\(\\*FormBox[RowBox[{\\\"{\\\", \
+RowBox[{\\\"\\\\\\\"LoopTools`\\\\\\\"\\\", \\\",\\\", \
+\\\"\\\\\\\"FeynCalc`\\\\\\\"\\\"}], \\\"}\\\"}], TraditionalForm]\\); \
+definitions in context \\!\\(\\*FormBox[\\\"\\\\\\\"LoopTools`\\\\\\\"\\\", \
+TraditionalForm]\\) may shadow or be shadowed by other definitions.\"",2,2,2,
+    22972650892718184985,"Local"},
+   "MessageTemplate"], TraditionalForm]], "Message", "MSG",
+ CellChangeTimes->{3.708088405589629*^9, 3.7080884532285423`*^9, 
+  3.7080892866402483`*^9, 3.708089677246046*^9, 3.714886414357644*^9, 
+  3.7148867482791023`*^9}],
+
+Cell[BoxData[
+ FormBox[
+  TemplateBox[{
+   "A0","shdw",
+    "\"Symbol \\!\\(\\*FormBox[\\\"\\\\\\\"A0\\\\\\\"\\\", \
+TraditionalForm]\\) appears in multiple contexts \
+\\!\\(\\*FormBox[RowBox[{\\\"{\\\", \
+RowBox[{\\\"\\\\\\\"LoopTools`\\\\\\\"\\\", \\\",\\\", \
+\\\"\\\\\\\"FeynCalc`\\\\\\\"\\\"}], \\\"}\\\"}], TraditionalForm]\\); \
+definitions in context \\!\\(\\*FormBox[\\\"\\\\\\\"LoopTools`\\\\\\\"\\\", \
+TraditionalForm]\\) may shadow or be shadowed by other definitions.\"",2,2,3,
+    22972650892718184985,"Local"},
+   "MessageTemplate"], TraditionalForm]], "Message", "MSG",
+ CellChangeTimes->{3.708088405589629*^9, 3.7080884532285423`*^9, 
+  3.7080892866402483`*^9, 3.708089677246046*^9, 3.714886414357644*^9, 
+  3.714886748285536*^9}],
+
+Cell[BoxData[
+ FormBox[
+  TemplateBox[{
+   "A00","shdw",
+    "\"Symbol \\!\\(\\*FormBox[\\\"\\\\\\\"A00\\\\\\\"\\\", \
+TraditionalForm]\\) appears in multiple contexts \
+\\!\\(\\*FormBox[RowBox[{\\\"{\\\", \
+RowBox[{\\\"\\\\\\\"LoopTools`\\\\\\\"\\\", \\\",\\\", \
+\\\"\\\\\\\"FeynCalc`\\\\\\\"\\\"}], \\\"}\\\"}], TraditionalForm]\\); \
+definitions in context \\!\\(\\*FormBox[\\\"\\\\\\\"LoopTools`\\\\\\\"\\\", \
+TraditionalForm]\\) may shadow or be shadowed by other definitions.\"",2,2,4,
+    22972650892718184985,"Local"},
+   "MessageTemplate"], TraditionalForm]], "Message", "MSG",
+ CellChangeTimes->{3.708088405589629*^9, 3.7080884532285423`*^9, 
+  3.7080892866402483`*^9, 3.708089677246046*^9, 3.714886414357644*^9, 
+  3.714886748291903*^9}],
+
+Cell[BoxData[
+ FormBox[
+  TemplateBox[{
+   "B0","shdw",
+    "\"Symbol \\!\\(\\*FormBox[\\\"\\\\\\\"B0\\\\\\\"\\\", \
+TraditionalForm]\\) appears in multiple contexts \
+\\!\\(\\*FormBox[RowBox[{\\\"{\\\", \
+RowBox[{\\\"\\\\\\\"LoopTools`\\\\\\\"\\\", \\\",\\\", \
+\\\"\\\\\\\"FeynCalc`\\\\\\\"\\\"}], \\\"}\\\"}], TraditionalForm]\\); \
+definitions in context \\!\\(\\*FormBox[\\\"\\\\\\\"LoopTools`\\\\\\\"\\\", \
+TraditionalForm]\\) may shadow or be shadowed by other definitions.\"",2,2,5,
+    22972650892718184985,"Local"},
+   "MessageTemplate"], TraditionalForm]], "Message", "MSG",
+ CellChangeTimes->{3.708088405589629*^9, 3.7080884532285423`*^9, 
+  3.7080892866402483`*^9, 3.708089677246046*^9, 3.714886414357644*^9, 
+  3.714886748298277*^9}],
+
+Cell[BoxData[
+ FormBox[
+  TemplateBox[{
+   "B1","shdw",
+    "\"Symbol \\!\\(\\*FormBox[\\\"\\\\\\\"B1\\\\\\\"\\\", \
+TraditionalForm]\\) appears in multiple contexts \
+\\!\\(\\*FormBox[RowBox[{\\\"{\\\", \
+RowBox[{\\\"\\\\\\\"LoopTools`\\\\\\\"\\\", \\\",\\\", \
+\\\"\\\\\\\"FeynCalc`\\\\\\\"\\\"}], \\\"}\\\"}], TraditionalForm]\\); \
+definitions in context \\!\\(\\*FormBox[\\\"\\\\\\\"LoopTools`\\\\\\\"\\\", \
+TraditionalForm]\\) may shadow or be shadowed by other definitions.\"",2,2,6,
+    22972650892718184985,"Local"},
+   "MessageTemplate"], TraditionalForm]], "Message", "MSG",
+ CellChangeTimes->{3.708088405589629*^9, 3.7080884532285423`*^9, 
+  3.7080892866402483`*^9, 3.708089677246046*^9, 3.714886414357644*^9, 
+  3.714886748305388*^9}],
+
+Cell[BoxData[
+ FormBox[
+  TemplateBox[{
+   "B00","shdw",
+    "\"Symbol \\!\\(\\*FormBox[\\\"\\\\\\\"B00\\\\\\\"\\\", \
+TraditionalForm]\\) appears in multiple contexts \
+\\!\\(\\*FormBox[RowBox[{\\\"{\\\", \
+RowBox[{\\\"\\\\\\\"LoopTools`\\\\\\\"\\\", \\\",\\\", \
+\\\"\\\\\\\"FeynCalc`\\\\\\\"\\\"}], \\\"}\\\"}], TraditionalForm]\\); \
+definitions in context \\!\\(\\*FormBox[\\\"\\\\\\\"LoopTools`\\\\\\\"\\\", \
+TraditionalForm]\\) may shadow or be shadowed by other definitions.\"",2,2,7,
+    22972650892718184985,"Local"},
+   "MessageTemplate"], TraditionalForm]], "Message", "MSG",
+ CellChangeTimes->{3.708088405589629*^9, 3.7080884532285423`*^9, 
+  3.7080892866402483`*^9, 3.708089677246046*^9, 3.714886414357644*^9, 
+  3.714886748311818*^9}],
+
+Cell[BoxData[
+ FormBox[
+  TemplateBox[{
+   "B11","shdw",
+    "\"Symbol \\!\\(\\*FormBox[\\\"\\\\\\\"B11\\\\\\\"\\\", \
+TraditionalForm]\\) appears in multiple contexts \
+\\!\\(\\*FormBox[RowBox[{\\\"{\\\", \
+RowBox[{\\\"\\\\\\\"LoopTools`\\\\\\\"\\\", \\\",\\\", \
+\\\"\\\\\\\"FeynCalc`\\\\\\\"\\\"}], \\\"}\\\"}], TraditionalForm]\\); \
+definitions in context \\!\\(\\*FormBox[\\\"\\\\\\\"LoopTools`\\\\\\\"\\\", \
+TraditionalForm]\\) may shadow or be shadowed by other definitions.\"",2,2,8,
+    22972650892718184985,"Local"},
+   "MessageTemplate"], TraditionalForm]], "Message", "MSG",
+ CellChangeTimes->{3.708088405589629*^9, 3.7080884532285423`*^9, 
+  3.7080892866402483`*^9, 3.708089677246046*^9, 3.714886414357644*^9, 
+  3.7148867483180447`*^9}],
+
+Cell[BoxData[
+ FormBox[
+  TemplateBox[{
+   "DB0","shdw",
+    "\"Symbol \\!\\(\\*FormBox[\\\"\\\\\\\"DB0\\\\\\\"\\\", \
+TraditionalForm]\\) appears in multiple contexts \
+\\!\\(\\*FormBox[RowBox[{\\\"{\\\", \
+RowBox[{\\\"\\\\\\\"LoopTools`\\\\\\\"\\\", \\\",\\\", \
+\\\"\\\\\\\"FeynCalc`\\\\\\\"\\\"}], \\\"}\\\"}], TraditionalForm]\\); \
+definitions in context \\!\\(\\*FormBox[\\\"\\\\\\\"LoopTools`\\\\\\\"\\\", \
+TraditionalForm]\\) may shadow or be shadowed by other definitions.\"",2,2,9,
+    22972650892718184985,"Local"},
+   "MessageTemplate"], TraditionalForm]], "Message", "MSG",
+ CellChangeTimes->{3.708088405589629*^9, 3.7080884532285423`*^9, 
+  3.7080892866402483`*^9, 3.708089677246046*^9, 3.714886414357644*^9, 
+  3.7148867483243837`*^9}],
+
+Cell[BoxData[
+ FormBox[
+  TemplateBox[{
+   "DB1","shdw",
+    "\"Symbol \\!\\(\\*FormBox[\\\"\\\\\\\"DB1\\\\\\\"\\\", \
+TraditionalForm]\\) appears in multiple contexts \
+\\!\\(\\*FormBox[RowBox[{\\\"{\\\", \
+RowBox[{\\\"\\\\\\\"LoopTools`\\\\\\\"\\\", \\\",\\\", \
+\\\"\\\\\\\"FeynCalc`\\\\\\\"\\\"}], \\\"}\\\"}], TraditionalForm]\\); \
+definitions in context \\!\\(\\*FormBox[\\\"\\\\\\\"LoopTools`\\\\\\\"\\\", \
+TraditionalForm]\\) may shadow or be shadowed by other definitions.\"",2,2,10,
+    22972650892718184985,"Local"},
+   "MessageTemplate"], TraditionalForm]], "Message", "MSG",
+ CellChangeTimes->{3.708088405589629*^9, 3.7080884532285423`*^9, 
+  3.7080892866402483`*^9, 3.708089677246046*^9, 3.714886414357644*^9, 
+  3.714886748330811*^9}],
+
+Cell[BoxData[
+ FormBox[
+  TemplateBox[{
+   "C0","shdw",
+    "\"Symbol \\!\\(\\*FormBox[\\\"\\\\\\\"C0\\\\\\\"\\\", \
+TraditionalForm]\\) appears in multiple contexts \
+\\!\\(\\*FormBox[RowBox[{\\\"{\\\", \
+RowBox[{\\\"\\\\\\\"LoopTools`\\\\\\\"\\\", \\\",\\\", \
+\\\"\\\\\\\"FeynCalc`\\\\\\\"\\\"}], \\\"}\\\"}], TraditionalForm]\\); \
+definitions in context \\!\\(\\*FormBox[\\\"\\\\\\\"LoopTools`\\\\\\\"\\\", \
+TraditionalForm]\\) may shadow or be shadowed by other definitions.\"",2,2,11,
+    22972650892718184985,"Local"},
+   "MessageTemplate"], TraditionalForm]], "Message", "MSG",
+ CellChangeTimes->{3.708088405589629*^9, 3.7080884532285423`*^9, 
+  3.7080892866402483`*^9, 3.708089677246046*^9, 3.714886414357644*^9, 
+  3.714886748337376*^9}],
+
+Cell[BoxData[
+ FormBox[
+  TemplateBox[{
+   "D0","shdw",
+    "\"Symbol \\!\\(\\*FormBox[\\\"\\\\\\\"D0\\\\\\\"\\\", \
+TraditionalForm]\\) appears in multiple contexts \
+\\!\\(\\*FormBox[RowBox[{\\\"{\\\", \
+RowBox[{\\\"\\\\\\\"LoopTools`\\\\\\\"\\\", \\\",\\\", \
+\\\"\\\\\\\"FeynCalc`\\\\\\\"\\\"}], \\\"}\\\"}], TraditionalForm]\\); \
+definitions in context \\!\\(\\*FormBox[\\\"\\\\\\\"LoopTools`\\\\\\\"\\\", \
+TraditionalForm]\\) may shadow or be shadowed by other definitions.\"",2,2,12,
+    22972650892718184985,"Local"},
+   "MessageTemplate"], TraditionalForm]], "Message", "MSG",
+ CellChangeTimes->{3.708088405589629*^9, 3.7080884532285423`*^9, 
+  3.7080892866402483`*^9, 3.708089677246046*^9, 3.714886414357644*^9, 
+  3.714886748343957*^9}],
+
+Cell[BoxData[
+ FormBox[
+  InterpretationBox[
+   RowBox[{
+    TagBox["LinkObject",
+     "SummaryHead"], "[", 
+    DynamicModuleBox[{Typeset`open$$ = False}, 
+     PanelBox[
+      PaneSelectorBox[{False->GridBox[{
+         {
+          PaneBox[
+           ButtonBox[
+            
+            DynamicBox[FEPrivate`FrontEndResource[
+             "FEBitmaps", "SquarePlusIconMedium"],
+             ImageSizeCache->{15., {0., 15.}}],
+            Appearance->None,
+            ButtonFunction:>(Typeset`open$$ = True),
+            Evaluator->Automatic,
+            Method->"Preemptive"],
+           Alignment->{Center, Center},
+           
+           ImageSize->
+            Dynamic[{
+             Automatic, 3.5 CurrentValue["FontCapHeight"]/
+              AbsoluteCurrentValue[Magnification]}]], 
+          GraphicsBox[
+           {Thickness[0.038461538461538464`], 
+            {FaceForm[{GrayLevel[0.93], Opacity[1.]}], 
+             FilledCurveBox[{{{1, 4, 3}, {0, 1, 0}, {1, 3, 3}, {0, 1, 0}, {1, 
+              3, 3}, {0, 1, 0}, {1, 3, 3}, {0, 1, 0}}}, {{{
+              25.499999999999996`, 2.5}, {25.499999999999996`, 
+              1.3953100000000003`}, {24.604699999999998`, 
+              0.49999999999999994`}, {23.5, 0.49999999999999994`}, {2.5, 
+              0.49999999999999994`}, {1.3953100000000003`, 
+              0.49999999999999994`}, {0.49999999999999994`, 
+              1.3953100000000003`}, {0.49999999999999994`, 2.5}, {
+              0.49999999999999994`, 23.5}, {0.49999999999999994`, 
+              24.604699999999998`}, {1.3953100000000003`, 
+              25.499999999999996`}, {2.5, 25.499999999999996`}, {23.5, 
+              25.499999999999996`}, {24.604699999999998`, 
+              25.499999999999996`}, {25.499999999999996`, 
+              24.604699999999998`}, {25.499999999999996`, 23.5}, {
+              25.499999999999996`, 2.5}}}]}, 
+            {FaceForm[{RGBColor[0.5, 0.5, 0.5], Opacity[1.]}], 
+             FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 
+              1, 0}, {0, 1, 0}, {0, 1, 0}}}, {{{20.5426, 
+              19.116799999999998`}, {16.3832, 21.876199999999997`}, {16.3832, 
+              20.021499999999996`}, {6.930469999999999, 
+              20.021499999999996`}, {6.930469999999999, 
+              18.212100000000003`}, {16.3832, 18.212100000000003`}, {16.3832, 
+              16.357399999999995`}, {20.5426, 19.116799999999998`}}}], 
+             FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 
+              1, 0}, {0, 1, 0}, {0, 1, 0}}}, {{{5.30508, 13.8391}, {9.46445, 
+              11.079700000000003`}, {9.46445, 12.933999999999997`}, {
+              18.917199999999998`, 12.933999999999997`}, {18.917199999999998`,
+               14.7438}, {9.46445, 14.7438}, {9.46445, 16.598}, {5.30508, 
+              13.8391}}}], 
+             FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 
+              1, 0}, {0, 1, 0}, {0, 1, 0}}}, {{{5.30508, 13.8391}, {9.46445, 
+              11.079700000000003`}, {9.46445, 12.933999999999997`}, {
+              18.917199999999998`, 12.933999999999997`}, {18.917199999999998`,
+               14.7438}, {9.46445, 14.7438}, {9.46445, 16.598}, {5.30508, 
+              13.8391}}}], 
+             FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 
+              1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {
+              0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
+              0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}}}, CompressedData["
+1:eJxTTMoPSmVmYGBgBGIRIGYC4sIjUTVcAooO8+XdOPpnKDg8YkwNXuen7JA2
+W/qycJSgw5sbHEde31CB82PFhGf3n1V1aFVgVz0zR8oBrF9czWFHsFXE/9Wy
+Dje0Dj4qiFWDy7cVLYptDVKH65/g6Xbu0HMNOB9sn4I23H6w+SWacD5De8DS
+tDQNB7ldC/alskg4aD2+nx6joeFgnPFi/oMZog5B9vlaQa/UHao9k7f0KUhA
++D/UUPVbqML5jCB+oIpDzJHypGv8Eg4eGad3ikiqwM2T57H5LndPGW6eya7m
+GzMvKcH1o4cXABG3d/Y=
+              "]], 
+             FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 
+              1, 0}, {0, 1, 0}}}, {{{14.163129999999999`, 
+              4.337966249999999}, {16.96813, 4.337966249999999}, {16.96813, 
+              5.047809999999999}, {14.98813, 5.047809999999999}, {14.98813, 
+              8.29796625}, {14.163129999999999`, 8.29796625}, {
+              14.163129999999999`, 4.337966249999999}}}]}},
+           AspectRatio->1,
+           Axes->False,
+           Background->GrayLevel[0.93],
+           Frame->True,
+           FrameStyle->Directive[
+             Thickness[Tiny], 
+             GrayLevel[0.7]],
+           FrameTicks->None,
+           ImageSize->{Automatic, 
+             Dynamic[
+             3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+               Magnification]), ImageSizeCache -> {45., {0., 9.}}]}], GridBox[{
+            {
+             RowBox[{
+              TagBox["\<\"Name: \"\>",
+               "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+              TagBox[
+               StyleBox[
+                
+                PaneBox["\<\"'/home/marcela/Desktop/Dropbox/LoopTools/\
+LoopTools/x86_64-Linux/bin/LoopTools'\"\>",
+                 BaselinePosition->Baseline,
+                 ContentPadding->False,
+                 FrameMargins->0,
+                 ImageSize->{{1, 300}, Automatic},
+                 StripOnInput->True],
+                LineBreakWithin->False],
+               "SummaryItem"]}]},
+            {
+             RowBox[{
+              TagBox["\<\"Link mode: \"\>",
+               "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+              TagBox["Listen",
+               "SummaryItem"]}]}
+           },
+           AutoDelete->False,
+           
+           BaseStyle->{
+            ShowStringCharacters -> False, NumberMarks -> False, 
+             PrintPrecision -> 3, ShowSyntaxStyles -> False},
+           GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Automatic}}},
+           
+           
+           GridBoxItemSize->{
+            "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+           GridBoxSpacings->{"Columns" -> {{2}}, "Rows" -> {{Automatic}}}]}
+        },
+        AutoDelete->False,
+        BaselinePosition->{1, 1},
+        GridBoxAlignment->{"Rows" -> {{Top}}},
+        GridBoxItemSize->{
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], True->GridBox[{
+         {
+          PaneBox[
+           ButtonBox[
+            
+            DynamicBox[FEPrivate`FrontEndResource[
+             "FEBitmaps", "SquareMinusIconMedium"]],
+            Appearance->None,
+            ButtonFunction:>(Typeset`open$$ = False),
+            Evaluator->Automatic,
+            Method->"Preemptive"],
+           Alignment->{Center, Center},
+           
+           ImageSize->
+            Dynamic[{
+             Automatic, 3.5 CurrentValue["FontCapHeight"]/
+              AbsoluteCurrentValue[Magnification]}]], 
+          GraphicsBox[
+           {Thickness[0.038461538461538464`], 
+            {FaceForm[{GrayLevel[0.93], Opacity[1.]}], 
+             FilledCurveBox[{{{1, 4, 3}, {0, 1, 0}, {1, 3, 3}, {0, 1, 0}, {1, 
+              3, 3}, {0, 1, 0}, {1, 3, 3}, {0, 1, 0}}}, {{{
+              25.499999999999996`, 2.5}, {25.499999999999996`, 
+              1.3953100000000003`}, {24.604699999999998`, 
+              0.49999999999999994`}, {23.5, 0.49999999999999994`}, {2.5, 
+              0.49999999999999994`}, {1.3953100000000003`, 
+              0.49999999999999994`}, {0.49999999999999994`, 
+              1.3953100000000003`}, {0.49999999999999994`, 2.5}, {
+              0.49999999999999994`, 23.5}, {0.49999999999999994`, 
+              24.604699999999998`}, {1.3953100000000003`, 
+              25.499999999999996`}, {2.5, 25.499999999999996`}, {23.5, 
+              25.499999999999996`}, {24.604699999999998`, 
+              25.499999999999996`}, {25.499999999999996`, 
+              24.604699999999998`}, {25.499999999999996`, 23.5}, {
+              25.499999999999996`, 2.5}}}]}, 
+            {FaceForm[{RGBColor[0.5, 0.5, 0.5], Opacity[1.]}], 
+             FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 
+              1, 0}, {0, 1, 0}, {0, 1, 0}}}, {{{20.5426, 
+              19.116799999999998`}, {16.3832, 21.876199999999997`}, {16.3832, 
+              20.021499999999996`}, {6.930469999999999, 
+              20.021499999999996`}, {6.930469999999999, 
+              18.212100000000003`}, {16.3832, 18.212100000000003`}, {16.3832, 
+              16.357399999999995`}, {20.5426, 19.116799999999998`}}}], 
+             FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 
+              1, 0}, {0, 1, 0}, {0, 1, 0}}}, {{{5.30508, 13.8391}, {9.46445, 
+              11.079700000000003`}, {9.46445, 12.933999999999997`}, {
+              18.917199999999998`, 12.933999999999997`}, {18.917199999999998`,
+               14.7438}, {9.46445, 14.7438}, {9.46445, 16.598}, {5.30508, 
+              13.8391}}}], 
+             FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 
+              1, 0}, {0, 1, 0}, {0, 1, 0}}}, {{{5.30508, 13.8391}, {9.46445, 
+              11.079700000000003`}, {9.46445, 12.933999999999997`}, {
+              18.917199999999998`, 12.933999999999997`}, {18.917199999999998`,
+               14.7438}, {9.46445, 14.7438}, {9.46445, 16.598}, {5.30508, 
+              13.8391}}}], 
+             FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 
+              1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {
+              0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
+              0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}}}, CompressedData["
+1:eJxTTMoPSmVmYGBgBGIRIGYC4sIjUTVcAooO8+XdOPpnKDg8YkwNXuen7JA2
+W/qycJSgw5sbHEde31CB82PFhGf3n1V1aFVgVz0zR8oBrF9czWFHsFXE/9Wy
+Dje0Dj4qiFWDy7cVLYptDVKH65/g6Xbu0HMNOB9sn4I23H6w+SWacD5De8DS
+tDQNB7ldC/alskg4aD2+nx6joeFgnPFi/oMZog5B9vlaQa/UHao9k7f0KUhA
++D/UUPVbqML5jCB+oIpDzJHypGv8Eg4eGad3ikiqwM2T57H5LndPGW6eya7m
+GzMvKcH1o4cXABG3d/Y=
+              "]], 
+             FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 
+              1, 0}, {0, 1, 0}}}, {{{14.163129999999999`, 
+              4.337966249999999}, {16.96813, 4.337966249999999}, {16.96813, 
+              5.047809999999999}, {14.98813, 5.047809999999999}, {14.98813, 
+              8.29796625}, {14.163129999999999`, 8.29796625}, {
+              14.163129999999999`, 4.337966249999999}}}]}},
+           AspectRatio->1,
+           Axes->False,
+           Background->GrayLevel[0.93],
+           Frame->True,
+           FrameStyle->Directive[
+             Thickness[Tiny], 
+             GrayLevel[0.7]],
+           FrameTicks->None,
+           ImageSize->{Automatic, 
+             Dynamic[
+             3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+               Magnification]), ImageSizeCache -> {45., {0., 9.}}]}], GridBox[{
+            {
+             RowBox[{
+              TagBox["\<\"Name: \"\>",
+               "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+              TagBox[
+               
+               PaneBox["\<\"'/home/marcela/Desktop/Dropbox/LoopTools/\
+LoopTools/x86_64-Linux/bin/LoopTools'\"\>",
+                BaselinePosition->Baseline,
+                ContentPadding->False,
+                FrameMargins->0,
+                ImageSize->{{1, 500}, Automatic},
+                StripOnInput->True],
+               "SummaryItem"]}]},
+            {
+             RowBox[{
+              TagBox["\<\"Link mode: \"\>",
+               "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+              TagBox["Listen",
+               "SummaryItem"]}]},
+            {
+             RowBox[{
+              TagBox["\<\"Link protocol: \"\>",
+               "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+              TagBox["\<\"SharedMemory\"\>",
+               "SummaryItem"]}]}
+           },
+           AutoDelete->False,
+           
+           BaseStyle->{
+            ShowStringCharacters -> False, NumberMarks -> False, 
+             PrintPrecision -> 3, ShowSyntaxStyles -> False},
+           GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Automatic}}},
+           
+           
+           GridBoxItemSize->{
+            "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+           GridBoxSpacings->{"Columns" -> {{2}}, "Rows" -> {{Automatic}}}]}
+        },
+        AutoDelete->False,
+        BaselinePosition->{1, 1},
+        GridBoxAlignment->{"Rows" -> {{Top}}},
+        GridBoxItemSize->{
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}]}, Dynamic[
+       Typeset`open$$],
+       ImageSize->Automatic],
+      BaselinePosition->Baseline],
+     DynamicModuleValues:>{}], "]"}],
+   LinkObject[
+   "'/home/marcela/Desktop/Dropbox/LoopTools/LoopTools/x86_64-Linux/bin/\
+LoopTools'", 559, 4],
+   Editable->False,
+   SelectWithContents->True,
+   Selectable->False], TraditionalForm]], "Output",
+ CellChangeTimes->{
+  3.704646628001072*^9, 3.7047109072768497`*^9, 3.704711529019719*^9, 
+   3.704721715876972*^9, 3.704722139084896*^9, 3.7047336486679363`*^9, 
+   3.704734602518915*^9, 3.7047377045759573`*^9, 3.7050711015169487`*^9, 
+   3.7050723701351957`*^9, 3.7050731709332247`*^9, 3.7050732600178432`*^9, 
+   3.705074414440177*^9, 3.7050744553341427`*^9, 3.705144541226015*^9, 
+   3.705238252524522*^9, 3.705244185308317*^9, 3.705244305175901*^9, 
+   3.705244422225853*^9, 3.705252878229906*^9, 3.707058084985467*^9, 
+   3.707058285908856*^9, 3.707059454564321*^9, 3.7070616845228157`*^9, 
+   3.707065681032228*^9, {3.707065735232255*^9, 3.707065762552651*^9}, 
+   3.708088198138454*^9, {3.7080883762435513`*^9, 3.7080884057044973`*^9}, 
+   3.708088453343178*^9, 3.7080892867473087`*^9, 3.708089677441835*^9, 
+   3.7148864144858437`*^9, 3.714886748372017*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"<<", 
+  "\"\</home/marcela/Desktop/Dropbox/ProyectoVectorRepFund/ant-1.2/ANT.m\>\""}\
+]], "Input",
+ CellChangeTimes->{{3.5835336052456207`*^9, 3.5835336074621058`*^9}, {
+  3.583534242387164*^9, 3.583534252103552*^9}, {3.7047216443826427`*^9, 
+  3.7047216531676073`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ FormBox["\<\"ANT Version: 1.2 ( 08 Nov 2015).\"\>", 
+  TraditionalForm]], "Print",
+ CellChangeTimes->{
+  3.7047216537799053`*^9, 3.704721715977837*^9, 3.704722139142078*^9, 
+   3.704733648719205*^9, 3.7047346025631866`*^9, 3.704737704628106*^9, 
+   3.705071101555026*^9, 3.705072370170245*^9, 3.705073170976359*^9, 
+   3.705073260040833*^9, 3.705074414469448*^9, 3.705074455436316*^9, 
+   3.7051445412649317`*^9, 3.7052382525539837`*^9, 3.7052441853157578`*^9, 
+   3.705244305216568*^9, 3.705244422232154*^9, 3.705252878234708*^9, 
+   3.707058084991042*^9, 3.707058285914661*^9, 3.707059454621592*^9, 
+   3.7070616846170187`*^9, 3.707065681057445*^9, {3.707065735256145*^9, 
+   3.707065762577142*^9}, 3.708088198199357*^9, {3.708088376274353*^9, 
+   3.708088405734585*^9}, 3.708088453349547*^9, 3.7080892867722282`*^9, 
+   3.708089677466004*^9, 3.714886414492144*^9, 3.7148867483926287`*^9}],
+
+Cell[BoxData[
+ FormBox["\<\"Authors: Paul W. Angel, Yi Cai, Nicholas L. Rodd, Michael A. \
+Schmidt, Raymond R. Volkas\"\>", TraditionalForm]], "Print",
+ CellChangeTimes->{
+  3.7047216537799053`*^9, 3.704721715977837*^9, 3.704722139142078*^9, 
+   3.704733648719205*^9, 3.7047346025631866`*^9, 3.704737704628106*^9, 
+   3.705071101555026*^9, 3.705072370170245*^9, 3.705073170976359*^9, 
+   3.705073260040833*^9, 3.705074414469448*^9, 3.705074455436316*^9, 
+   3.7051445412649317`*^9, 3.7052382525539837`*^9, 3.7052441853157578`*^9, 
+   3.705244305216568*^9, 3.705244422232154*^9, 3.705252878234708*^9, 
+   3.707058084991042*^9, 3.707058285914661*^9, 3.707059454621592*^9, 
+   3.7070616846170187`*^9, 3.707065681057445*^9, {3.707065735256145*^9, 
+   3.707065762577142*^9}, 3.708088198199357*^9, {3.708088376274353*^9, 
+   3.708088405734585*^9}, 3.708088453349547*^9, 3.7080892867722282`*^9, 
+   3.708089677466004*^9, 3.714886414492144*^9, 3.7148867483933163`*^9}],
+
+Cell[BoxData[
+ FormBox["\<\"Please cite: arXiv:1308.0463.\"\>", TraditionalForm]], "Print",
+ CellChangeTimes->{
+  3.7047216537799053`*^9, 3.704721715977837*^9, 3.704722139142078*^9, 
+   3.704733648719205*^9, 3.7047346025631866`*^9, 3.704737704628106*^9, 
+   3.705071101555026*^9, 3.705072370170245*^9, 3.705073170976359*^9, 
+   3.705073260040833*^9, 3.705074414469448*^9, 3.705074455436316*^9, 
+   3.7051445412649317`*^9, 3.7052382525539837`*^9, 3.7052441853157578`*^9, 
+   3.705244305216568*^9, 3.705244422232154*^9, 3.705252878234708*^9, 
+   3.707058084991042*^9, 3.707058285914661*^9, 3.707059454621592*^9, 
+   3.7070616846170187`*^9, 3.707065681057445*^9, {3.707065735256145*^9, 
+   3.707065762577142*^9}, 3.708088198199357*^9, {3.708088376274353*^9, 
+   3.708088405734585*^9}, 3.708088453349547*^9, 3.7080892867722282`*^9, 
+   3.708089677466004*^9, 3.714886414492144*^9, 3.714886748393978*^9}],
+
+Cell[BoxData[
+ FormBox["\<\"http://ant.hepforge.org\"\>", TraditionalForm]], "Print",
+ CellChangeTimes->{
+  3.7047216537799053`*^9, 3.704721715977837*^9, 3.704722139142078*^9, 
+   3.704733648719205*^9, 3.7047346025631866`*^9, 3.704737704628106*^9, 
+   3.705071101555026*^9, 3.705072370170245*^9, 3.705073170976359*^9, 
+   3.705073260040833*^9, 3.705074414469448*^9, 3.705074455436316*^9, 
+   3.7051445412649317`*^9, 3.7052382525539837`*^9, 3.7052441853157578`*^9, 
+   3.705244305216568*^9, 3.705244422232154*^9, 3.705252878234708*^9, 
+   3.707058084991042*^9, 3.707058285914661*^9, 3.707059454621592*^9, 
+   3.7070616846170187`*^9, 3.707065681057445*^9, {3.707065735256145*^9, 
+   3.707065762577142*^9}, 3.708088198199357*^9, {3.708088376274353*^9, 
+   3.708088405734585*^9}, 3.708088453349547*^9, 3.7080892867722282`*^9, 
+   3.708089677466004*^9, 3.714886414492144*^9, 3.7148867483945637`*^9}],
+
+Cell[BoxData[
+ FormBox["\<\"The package ANT is written for Mathematica 8 and higher and it \
+is distributed under the terms of GNU Public License \
+http://www.gnu.org/copyleft/gpl.html\"\>", TraditionalForm]], "Print",
+ CellChangeTimes->{
+  3.7047216537799053`*^9, 3.704721715977837*^9, 3.704722139142078*^9, 
+   3.704733648719205*^9, 3.7047346025631866`*^9, 3.704737704628106*^9, 
+   3.705071101555026*^9, 3.705072370170245*^9, 3.705073170976359*^9, 
+   3.705073260040833*^9, 3.705074414469448*^9, 3.705074455436316*^9, 
+   3.7051445412649317`*^9, 3.7052382525539837`*^9, 3.7052441853157578`*^9, 
+   3.705244305216568*^9, 3.705244422232154*^9, 3.705252878234708*^9, 
+   3.707058084991042*^9, 3.707058285914661*^9, 3.707059454621592*^9, 
+   3.7070616846170187`*^9, 3.707065681057445*^9, {3.707065735256145*^9, 
+   3.707065762577142*^9}, 3.708088198199357*^9, {3.708088376274353*^9, 
+   3.708088405734585*^9}, 3.708088453349547*^9, 3.7080892867722282`*^9, 
+   3.708089677466004*^9, 3.714886414492144*^9, 3.7148867483951406`*^9}],
+
+Cell[BoxData[
+ FormBox["\<\"Use ANT[expr] to evaluate the Passarino-Veltman functions \
+contained in expr to its finite part in the limit of vanishing external \
+momenta. Besides the function ANT, it defines the functions A0ant, B0ant, \
+C0ant as well as D0ant, which take the same arguments as A0, B0i, C0i and \
+D0i, respectively, and return the finite part of the PV function in the limit \
+of external momenta.\"\>", TraditionalForm]], "Print",
+ CellChangeTimes->{
+  3.7047216537799053`*^9, 3.704721715977837*^9, 3.704722139142078*^9, 
+   3.704733648719205*^9, 3.7047346025631866`*^9, 3.704737704628106*^9, 
+   3.705071101555026*^9, 3.705072370170245*^9, 3.705073170976359*^9, 
+   3.705073260040833*^9, 3.705074414469448*^9, 3.705074455436316*^9, 
+   3.7051445412649317`*^9, 3.7052382525539837`*^9, 3.7052441853157578`*^9, 
+   3.705244305216568*^9, 3.705244422232154*^9, 3.705252878234708*^9, 
+   3.707058084991042*^9, 3.707058285914661*^9, 3.707059454621592*^9, 
+   3.7070616846170187`*^9, 3.707065681057445*^9, {3.707065735256145*^9, 
+   3.707065762577142*^9}, 3.708088198199357*^9, {3.708088376274353*^9, 
+   3.708088405734585*^9}, 3.708088453349547*^9, 3.7080892867722282`*^9, 
+   3.708089677466004*^9, 3.714886414492144*^9, 3.7148867483960047`*^9}],
+
+Cell[BoxData[
+ FormBox["\<\"Note that the package ANT has to be loaded after FormCalc\"\>", 
+  TraditionalForm]], "Print",
+ CellChangeTimes->{
+  3.7047216537799053`*^9, 3.704721715977837*^9, 3.704722139142078*^9, 
+   3.704733648719205*^9, 3.7047346025631866`*^9, 3.704737704628106*^9, 
+   3.705071101555026*^9, 3.705072370170245*^9, 3.705073170976359*^9, 
+   3.705073260040833*^9, 3.705074414469448*^9, 3.705074455436316*^9, 
+   3.7051445412649317`*^9, 3.7052382525539837`*^9, 3.7052441853157578`*^9, 
+   3.705244305216568*^9, 3.705244422232154*^9, 3.705252878234708*^9, 
+   3.707058084991042*^9, 3.707058285914661*^9, 3.707059454621592*^9, 
+   3.7070616846170187`*^9, 3.707065681057445*^9, {3.707065735256145*^9, 
+   3.707065762577142*^9}, 3.708088198199357*^9, {3.708088376274353*^9, 
+   3.708088405734585*^9}, 3.708088453349547*^9, 3.7080892867722282`*^9, 
+   3.708089677466004*^9, 3.714886414492144*^9, 3.7148867483969088`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Passarino-Veltman functions Normalization", "Title",
+ CellChangeTimes->{{3.698403182578787*^9, 3.698403199888466*^9}, {
+  3.698403239326976*^9, 3.698403256549214*^9}, {3.698403363217182*^9, 
+  3.698403368702301*^9}, {3.7070577714079237`*^9, 3.70705778736335*^9}, {
+  3.707058697410894*^9, 3.707058713507641*^9}}],
+
+Cell[TextData[{
+ "\nThis notebook is to find the correct normalization of Passarino-Veltman \
+functions. Different normalizations can be found in textbooks and \
+high-energy-physics manuals of computing radiative corrections which don\
+\[CloseCurlyQuote]t match with the one of the ",
+ StyleBox["OneLoop", "Program"],
+ " function belong to ",
+ StyleBox["Feyncalc.\n\n", "Program"],
+ "It will be done by using the A.44 identity of Peskin&Schroeder "
+}], "Text",
+ CellChangeTimes->{{3.707057789714292*^9, 3.707057869916019*^9}, {
+  3.7070579861642313`*^9, 3.707058022031041*^9}, {3.7070580989684353`*^9, 
+  3.7070581517222443`*^9}, {3.707058194450563*^9, 3.707058217363743*^9}, {
+  3.707058316376342*^9, 3.707058377887013*^9}, {3.707058435942086*^9, 
+  3.707058468267046*^9}, {3.707058530405863*^9, 3.70705863241783*^9}, {
+  3.707058995363256*^9, 3.7070590039490747`*^9}},
+ FontSize->18,
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell["\<\
+
+Set the numbers:\
+\>", "Text",
+ CellChangeTimes->{{3.707058749357541*^9, 3.707058807997612*^9}, 
+   3.707059152932897*^9}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"n", "=", "3"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"d", "=", "4"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"\[CapitalDelta]", "=", "1"}], 
+  ";"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.707059072455011*^9, 3.7070591626544*^9}, {
+  3.7070592767065287`*^9, 3.7070592855063877`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"PI", "=", 
+  RowBox[{"PeskinIdentity", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"-", "1"}], ")"}], "^", "n"}], " ", 
+    RowBox[{"I", "/", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"4", " ", "Pi"}], ")"}], "^", 
+      RowBox[{"(", 
+       RowBox[{"d", "/", "2"}], ")"}]}]}], " ", 
+    RowBox[{
+     RowBox[{"Gamma", "[", 
+      RowBox[{"n", "-", 
+       RowBox[{"d", "/", "2"}]}], "]"}], "/", 
+     RowBox[{"Gamma", "[", "n", "]"}]}], " ", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"1", "/", "\[CapitalDelta]"}], ")"}], "^", 
+     RowBox[{"(", 
+      RowBox[{"n", "-", 
+       RowBox[{"d", "/", "2"}]}], ")"}], " "}]}]}]}]], "Input",
+ CellChangeTimes->{{3.7070590079326897`*^9, 3.707059070559408*^9}, {
+   3.707059173659114*^9, 3.7070592474945307`*^9}, 3.7070592910854683`*^9}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"-", 
+   FractionBox["\[ImaginaryI]", 
+    RowBox[{"32", " ", 
+     SuperscriptBox["\[Pi]", "2"]}]]}], TraditionalForm]], "Output",
+ CellChangeTimes->{{3.707059249187558*^9, 3.707059313436542*^9}, 
+   3.7070594546783123`*^9, 3.707061470754107*^9, 3.70706168472779*^9, 
+   3.707065681104007*^9, {3.7070657352945957`*^9, 3.707065762608901*^9}, 
+   3.708088198248191*^9, {3.708088376323539*^9, 3.708088405781378*^9}, 
+   3.708088453404537*^9, 3.7080892868296537`*^9, 3.708089677642387*^9, 
+   3.714886414562602*^9, 3.714886748458555*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"OLoop", "=", 
+   RowBox[{"PaVeReduce", "[", 
+    RowBox[{"OneLoop", "[", 
+     RowBox[{"p", ",", 
+      RowBox[{
+       RowBox[{"FAD", "[", 
+        RowBox[{"{", 
+         RowBox[{"p", ",", "\[CapitalDelta]"}], "}"}], "]"}], 
+       RowBox[{"FAD", "[", 
+        RowBox[{"{", 
+         RowBox[{"p", ",", "\[CapitalDelta]"}], "}"}], "]"}], 
+       RowBox[{"FAD", "[", 
+        RowBox[{"{", 
+         RowBox[{"p", ",", "\[CapitalDelta]"}], "}"}], "]"}]}]}], "]"}], 
+    "]"}]}], "\[IndentingNewLine]"}]], "Input",
+ CellChangeTimes->{
+  3.707059317361622*^9, {3.707059371766239*^9, 3.707059382277575*^9}, {
+   3.707059464047868*^9, 3.707059470053458*^9}, {3.70706140925909*^9, 
+   3.70706141808843*^9}, {3.707061461335495*^9, 3.7070614635258083`*^9}, {
+   3.70706195764419*^9, 3.707061958412142*^9}, {3.707062253659296*^9, 
+   3.7070622592501717`*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"\[ImaginaryI]", " ", 
+   SuperscriptBox["\[Pi]", "2"], " ", 
+   FormBox[
+    RowBox[{
+     SubscriptBox["\<\"C\"\>", "\<\"0\"\>"], "(", 
+     RowBox[{"0", ",", "0", ",", "0", ",", "1", ",", "1", ",", "1"}], ")"}],
+    TraditionalForm]}], TraditionalForm]], "Output",
+ CellChangeTimes->{
+  3.707065681161723*^9, {3.707065735353219*^9, 3.707065762690035*^9}, 
+   3.708088198350471*^9, {3.708088376424081*^9, 3.7080884058659887`*^9}, 
+   3.708088453508889*^9, 3.708089286913232*^9, 3.708089677797488*^9, 
+   3.714886414812953*^9, 3.714886748558926*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"s", "=", 
+   RowBox[{
+    RowBox[{"Solve", "[", 
+     RowBox[{
+      RowBox[{"PI", "\[Equal]", 
+       RowBox[{"norm", " ", "OLoop"}]}], ",", 
+      RowBox[{"{", "norm", "}"}]}], "]"}], "//", "StandardForm"}]}], 
+  "\[IndentingNewLine]"}]], "Input",
+ CellChangeTimes->{{3.707061630674556*^9, 3.707061718460154*^9}, {
+  3.707065528168748*^9, 3.70706552858687*^9}, {3.708088343987568*^9, 
+  3.70808836640545*^9}, {3.7080884141314983`*^9, 3.708088437263825*^9}, {
+  3.708088492872959*^9, 3.708088500734086*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{"norm", "\[Rule]", 
+    RowBox[{"-", 
+     FractionBox["1", 
+      RowBox[{"32", " ", 
+       SuperscriptBox["\[Pi]", "4"], " ", 
+       RowBox[{"FeynCalc`PaVe", "[", 
+        RowBox[{"0", ",", 
+         RowBox[{"{", 
+          RowBox[{"0", ",", "0", ",", "0"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"1", ",", "1", ",", "1"}], "}"}]}], "]"}]}]]}]}], "}"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{
+  3.707061685116056*^9, 3.707061719830555*^9, 3.7070619632613077`*^9, 
+   3.707065529158678*^9, 3.70706565023118*^9, {3.707065681274688*^9, 
+   3.707065703587585*^9}, {3.707065735414493*^9, 3.707065762731686*^9}, 
+   3.7080881983977013`*^9, {3.708088349866705*^9, 3.7080884059299507`*^9}, 
+   3.708088453537216*^9, 3.7080892869385357`*^9, 3.708089677873411*^9, 
+   3.714886414862756*^9, 3.7148867485852118`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", 
+  RowBox[{"C0", "[", 
+   RowBox[{"0", ",", "0", ",", "0", ",", "1", ",", "1", ",", "1"}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.707061967598548*^9, 3.707061974784374*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"-", "0.5`"}], TraditionalForm]], "Output",
+ CellChangeTimes->{
+  3.70706197539776*^9, 3.707065530822975*^9, 3.707065681292602*^9, {
+   3.707065735417729*^9, 3.707065762741794*^9}, 3.7080881984209633`*^9, {
+   3.708088376477948*^9, 3.708088405942444*^9}, 3.7080884535425863`*^9, 
+   3.708089287014576*^9, 3.708089677947349*^9, 3.714886414960699*^9, 
+   3.71488674859031*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"norm", "=", 
+  RowBox[{
+   RowBox[{"norm", "/.", 
+    RowBox[{"s", "[", 
+     RowBox[{"[", 
+      RowBox[{"1", ",", "1"}], "]"}], "]"}]}], "/.", " ", 
+   RowBox[{
+    RowBox[{"FeynCalc`PaVe", "[", 
+     RowBox[{"0", ",", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", "0", ",", "0"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"1", ",", "1", ",", "1"}], "}"}]}], "]"}], "\[Rule]", 
+    RowBox[{
+     RowBox[{"-", "1"}], "/", "2"}]}]}]}]], "Input",
+ CellChangeTimes->{{3.707065532264448*^9, 3.70706556059678*^9}, {
+  3.7070657931172037`*^9, 3.7070658252087107`*^9}, {3.708088266268669*^9, 
+  3.708088320107153*^9}, {3.708089330906785*^9, 3.7080893701247063`*^9}, {
+  3.7080895139197598`*^9, 3.7080895420789213`*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  FractionBox["1", 
+   RowBox[{"16", " ", 
+    SuperscriptBox["\[Pi]", "4"]}]], TraditionalForm]], "Output",
+ CellChangeTimes->{3.708089542489851*^9, 3.708089678018919*^9, 
+  3.7148864150079613`*^9, 3.714886748617754*^9}]
+}, Open  ]],
+
+Cell["\<\
+
+Conclusion: Each Passarino-Veltman function calculated with LoopTools has to \
+be multiply by 1/(16 \[Pi]^4)\
+\>", "Text",
+ CellChangeTimes->{
+  3.707061758997942*^9, {3.714886464719265*^9, 3.714886473673386*^9}, {
+   3.714886504051523*^9, 3.714886541793358*^9}, 3.714886689673416*^9, {
+   3.714886721358115*^9, 3.714886722376441*^9}, 3.714886875475276*^9},
+ Background->RGBColor[1, 0.9, 0.8]]
+}, Open  ]]
+},
+WindowSize->{1843, 1056},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+Magnification:>1.25 Inherited,
+FrontEndVersion->"11.0 for Linux x86 (64-bit) (September 21, 2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 175, 6, 48, "Input"],
+Cell[CellGroupData[{
+Cell[780, 32, 4548, 96, 32, "Print"],
+Cell[5331, 130, 3331, 62, 32, "Print"],
+Cell[8665, 194, 2487, 37, 32, "Print"],
+Cell[11155, 233, 2472, 37, 32, "Print"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13676, 276, 242, 4, 40, "Input"],
+Cell[13921, 282, 752, 14, 29, "Message"],
+Cell[14676, 298, 752, 15, 29, "Message"],
+Cell[15431, 315, 748, 15, 29, "Message"],
+Cell[16182, 332, 750, 15, 29, "Message"],
+Cell[16935, 349, 748, 15, 29, "Message"],
+Cell[17686, 366, 748, 15, 29, "Message"],
+Cell[18437, 383, 750, 15, 29, "Message"],
+Cell[19190, 400, 752, 15, 29, "Message"],
+Cell[19945, 417, 752, 15, 29, "Message"],
+Cell[20700, 434, 751, 15, 29, "Message"],
+Cell[21454, 451, 749, 15, 29, "Message"],
+Cell[22206, 468, 749, 15, 29, "Message"],
+Cell[22958, 485, 13619, 282, 80, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[36614, 772, 294, 6, 40, "Input"],
+Cell[CellGroupData[{
+Cell[36933, 782, 906, 14, 29, "Print"],
+Cell[37842, 798, 960, 14, 29, "Print"],
+Cell[38805, 814, 898, 13, 29, "Print"],
+Cell[39706, 829, 894, 13, 29, "Print"],
+Cell[40603, 844, 1027, 15, 29, "Print"],
+Cell[41633, 861, 1257, 18, 54, "Print"],
+Cell[42893, 881, 931, 14, 29, "Print"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[43873, 901, 318, 4, 116, "Title"],
+Cell[44194, 907, 921, 17, 192, "Text"],
+Cell[45118, 926, 133, 5, 61, "Text"],
+Cell[45254, 933, 362, 9, 125, "Input"],
+Cell[CellGroupData[{
+Cell[45641, 946, 837, 25, 40, "Input"],
+Cell[46481, 973, 568, 11, 67, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[47086, 989, 883, 22, 69, "Input"],
+Cell[47972, 1013, 584, 13, 42, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[48593, 1031, 543, 13, 69, "Input"],
+Cell[49139, 1046, 882, 21, 64, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[50058, 1072, 225, 5, 69, "Input"],
+Cell[50286, 1079, 408, 8, 38, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[50731, 1092, 744, 19, 40, "Input"],
+Cell[51478, 1113, 245, 6, 68, "Output"]
+}, Open  ]],
+Cell[51738, 1122, 404, 9, 82, "Text"]
+}, Open  ]]
+}
+]
+*)
+
